@@ -105,11 +105,9 @@ header.nav.scrolled .nav-inner{padding-top:12px;padding-bottom:12px;}
 .case-detail{max-height:0;overflow:hidden;transition:max-height .55s var(--ease);}
 .case.open .case-detail{max-height:2400px;}
 .case-body{display:grid;grid-template-columns:1.55fr 1fr;gap:38px;align-items:start;padding:8px 32px 34px;border-top:1px solid var(--line);}
-.case-narrative{padding-top:26px;}
-.case-list{list-style:none;display:grid;gap:13px;}
-.case-list li{position:relative;padding-left:24px;color:var(--muted);font-size:1rem;line-height:1.55;}
-.case-list li::before{content:"";position:absolute;left:3px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--clay);}
-.case-list li b{color:var(--ink);font-weight:600;}
+.case-narrative{padding-top:26px;display:grid;gap:24px;}
+.case-part .case-k{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);margin-bottom:9px;}
+.case-part p{color:var(--muted);font-size:1rem;line-height:1.58;}
 /* impact box + graphic tiles */
 .case-impact{background:var(--clay-soft);border-radius:16px;padding:22px 22px;margin-top:26px;}
 .case-impact .case-k{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--clay-2);margin-bottom:16px;}
@@ -122,6 +120,10 @@ header.nav.scrolled .nav-inner{padding-top:12px;padding-bottom:12px;}
 .im-body{min-width:0;}
 .im-num{font-family:var(--serif);font-size:1.32rem;font-weight:700;color:var(--ink);line-height:1.12;letter-spacing:-.02em;display:block;}
 .im-cap{font-size:.8rem;color:var(--muted);display:block;margin-top:2px;}
+/* company note */
+.company-note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--clay);border-radius:14px;padding:22px 26px;margin:30px 0 4px;}
+.company-note .cn-name{font-family:var(--serif);font-weight:600;font-size:1.1rem;color:var(--ink);margin-bottom:6px;}
+.company-note p{color:var(--muted);font-size:.98rem;line-height:1.6;}
 
 /* education */
 .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px;}
@@ -231,8 +233,8 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <h1 class="reveal in">I build products to solve real problems <span class="clay">and make things easier, faster, or better.</span></h1>
-        <p class="intro reveal in d1">I'm Radhika, a Product Manager who spent the last four years building and scaling consumer fintech products in India. Now at Cornell, I'm exploring what I want to build next after my MBA.</p>
+        <h1 class="reveal in">I build products to solve real problems <span class="clay">and make things easier, faster, better.</span></h1>
+        <p class="intro reveal in d1">I'm Radhika, a Product Manager who spent the last four years building and scaling consumer fintech products. Now at Cornell, I'm exploring what I want to build next after my MBA.</p>
         <div class="hero-actions reveal in d2">
           <a href="#work" class="btn btn-primary">See my work →</a>
           <a href="#about" class="btn btn-ghost">About me</a>
@@ -257,23 +259,30 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
       <h2 class="section-title">From customer problems to shipped products.</h2>
     </div>
 
+    <div class="company-note reveal">
+      <div class="cn-name">Raise Financial Services</div>
+      <p>Raise Financial Services is India's leading fintech platform, valued at $1.2 Bn, that provides a variety of investment solutions through its products Dhan and Upsurge. Raise is backed by marquee investors BEENEXT, Mirae Asset, 3one4 Capital, and Rocketship.vc.</p>
+    </div>
+
     <div class="cases">
       <!-- Case 1 -->
       <article class="case reveal open">
         <button class="case-head" aria-expanded="true">
           <span class="case-no">01</span>
-          <span class="case-title">Making it easier to invest when the market dips</span>
+          <span class="case-title">Investing across your portfolio in a single flow</span>
           <span class="case-toggle"><span class="txt"><span class="more">Read more</span><span class="less">Close</span></span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
         <div class="case-detail">
           <div class="case-body">
             <div class="case-narrative">
-              <ul class="case-list">
-                <li>When markets fell, investors often wanted to add money across several mutual funds they already owned, but had to invest in each one separately.</li>
-                <li>Built Top-Up so users could invest across their existing portfolio in a single flow.</li>
-                <li>Found another gap: new investors were taking almost 7 days after onboarding to make their first investment.</li>
-                <li>Added relevant fund recommendations and Top-Up to the post-onboarding experience, bringing time to first investment down to under 24 hours.</li>
-              </ul>
+              <div class="case-part">
+                <div class="case-k">Problem</div>
+                <p>When stock markets fall, users wanted to add more money to their existing mutual fund portfolio, but that required them to do so fund by fund, making it a repetitive process each time. We also found that new investors were taking almost 7 days after onboarding to make their first investment.</p>
+              </div>
+              <div class="case-part">
+                <div class="case-k">Solution</div>
+                <p>Built a single-click Top-Up feature, so investors could add money across their existing portfolio in a single flow. We also brought relevant fund recommendations into the post-onboarding journey, helping new investors make their first investment sooner and then invest instantly with Top-Up.</p>
+              </div>
             </div>
             <div class="case-impact">
               <div class="case-k">The impact</div>
@@ -290,18 +299,20 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
       <article class="case reveal">
         <button class="case-head" aria-expanded="false">
           <span class="case-no">02</span>
-          <span class="case-title">Preventing trades from failing before they happen</span>
+          <span class="case-title">Preventing trades from failing because of low balance</span>
           <span class="case-toggle"><span class="txt"><span class="more">Read more</span><span class="less">Close</span></span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
         <div class="case-detail">
           <div class="case-body">
             <div class="case-narrative">
-              <ul class="case-list">
-                <li>Every quarter, regulation required unused trading balances to be returned to customers' bank accounts.</li>
-                <li>When customers came back to trade, many assumed the money was still available and only realized it wasn't when their trade failed.</li>
-                <li>In trading, every second matters — a failed trade could mean missing the price or the opportunity altogether.</li>
-                <li>Built Auto Fund Transfer to automatically move money from a linked bank account after every quarter, so customers could place their trades without having to add funds manually.</li>
-              </ul>
+              <div class="case-part">
+                <div class="case-k">Problem</div>
+                <p>Every quarter, regulation required unused trading balances to be returned to customers' bank accounts. When customers came back to trade, many assumed the money was still available and only found out otherwise when the trade failed. In trading, even a short delay can mean missing the price or the opportunity.</p>
+              </div>
+              <div class="case-part">
+                <div class="case-k">Solution</div>
+                <p>Built Auto Fund Transfer to automatically move the required money from a linked bank account after every quarter, so customers could place their trades without having to add funds manually.</p>
+              </div>
             </div>
             <div class="case-impact">
               <div class="case-k">The impact</div>
@@ -324,10 +335,14 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
         <div class="case-detail">
           <div class="case-body">
             <div class="case-narrative">
-              <ul class="case-list">
-                <li>We were sourcing our market news from a third-party service. It gave us the news, but not much control over how useful that news could be to an investor.</li>
-                <li>We moved to an AI-generated feed so we could add more context and shape the experience ourselves.</li>
-              </ul>
+              <div class="case-part">
+                <div class="case-k">Problem</div>
+                <p>Sourcing market news from external vendors was expensive and gave limited control over the content, context, and overall user experience.</p>
+              </div>
+              <div class="case-part">
+                <div class="case-k">Solution</div>
+                <p>Built an AI-generated news feed that gave us more control over what users saw and allowed us to add more context around market updates.</p>
+              </div>
             </div>
             <div class="case-impact">
               <div class="case-k">The impact</div>
@@ -344,17 +359,20 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
       <article class="case reveal">
         <button class="case-head" aria-expanded="false">
           <span class="case-no">04</span>
-          <span class="case-title">Why do customers keep asking, "Where's my money?"</span>
+          <span class="case-title">Making withdrawals clearer and faster</span>
           <span class="case-toggle"><span class="txt"><span class="more">Read more</span><span class="less">Close</span></span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
         <div class="case-detail">
           <div class="case-body">
             <div class="case-narrative">
-              <ul class="case-list">
-                <li>One question kept showing up in our support data: when will my money reach my bank?</li>
-                <li>Customers couldn't see clear withdrawal timelines in the product. But when we dug deeper, we found the experience wasn't the only problem as the backend requests were being processed sequentially, adding unnecessary wait time for customers.</li>
-                <li>We redesigned the customer journey around clearer timelines and status updates, while changing the backend to process requests in parallel.</li>
-              </ul>
+              <div class="case-part">
+                <div class="case-k">Problem</div>
+                <p>"Where's my money?" was one of the most common questions coming into support. Customers couldn't clearly see when their withdrawal would arrive. At the same time, requests on the backend were being processed one after another, adding unnecessary wait time before the withdrawal process even began.</p>
+              </div>
+              <div class="case-part">
+                <div class="case-k">Solution</div>
+                <p>Redesigned the withdrawal experience to clearly show status and expected timelines. We also changed backend processing so requests could be handled in parallel, reaching the processing stage faster.</p>
+              </div>
             </div>
             <div class="case-impact">
               <div class="case-k">The impact</div>
@@ -371,16 +389,20 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
       <article class="case reveal">
         <button class="case-head" aria-expanded="false">
           <span class="case-no">05</span>
-          <span class="case-title">Building the product and finding its first customers</span>
+          <span class="case-title">Building a new product as the company evolved</span>
           <span class="case-toggle"><span class="txt"><span class="more">Read more</span><span class="less">Close</span></span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
         <div class="case-detail">
           <div class="case-body">
             <div class="case-narrative">
-              <ul class="case-list">
-                <li>After the company was acquired, we had to rethink the brand and build a new product.</li>
-                <li>I worked across product and product marketing, helping shape what we built, how we positioned it, how we took it to market and how we grew it.</li>
-              </ul>
+              <div class="case-part">
+                <div class="case-k">Problem</div>
+                <p>As the company began integrating acquisitions, the business was changing and the existing brand no longer represented everything we were becoming. We needed to rethink the brand, what it stood for, and the product built around it.</p>
+              </div>
+              <div class="case-part">
+                <div class="case-k">Solution</div>
+                <p>Helped build and launch the ed-tech product from scratch, working across product and product marketing to shape the product, positioning, go-to-market, and early growth.</p>
+              </div>
             </div>
             <div class="case-impact">
               <div class="case-k">The impact</div>
@@ -422,14 +444,12 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
     <div class="about-cols">
       <div class="about-lead reveal">
         <div class="eyebrow">About me</div>
-        <h2 class="section-title" style="margin-bottom:22px;">How I like to work.</h2>
-        <p class="lead">I'm naturally curious about why things don't work.</p>
+        <h2 class="section-title" style="margin-bottom:0;">I like turning ambiguity into something we can build.</h2>
       </div>
       <div class="about-body reveal d1">
-        <p>The part of product I enjoy most is getting underneath a problem. Why aren't people converting? Why are they contacting support? Why did something we expected to work… not work?</p>
-        <p>I'll talk to customers, look at the data, figure out what's getting in the way, and build from there. I care about the details, but I also like getting things shipped. And I like working with people who take ownership and care about what we're building together.</p>
-        <p>Before Cornell, I spent four years building consumer fintech products in India, while the company I worked at grew from an early-stage startup to a billion-dollar business. I got to work closely with the leadership team and see what changes as a company grows that quickly.</p>
-        <p>Now at Cornell, I'm exploring a much broader set of products and problems.</p>
+        <p>I'm naturally curious and like understanding why things work the way they do. When something isn't clear, I'll ask questions, talk to customers, look at the data, and keep going until I have a better sense of what we should do next. I like taking that uncertainty and turning it into something concrete we can build and ship.</p>
+        <p>Before Cornell, I spent four years at a fintech that grew from an early-stage startup into a billion-dollar company. Working closely with the CEO and leadership team shaped how I think about product as a whole — part of the customer experience, the business, and what the company is trying to build.</p>
+        <p>I like working with people who think the same way: take ownership, challenge each other, and are aligned towards building products that customers use.</p>
       </div>
     </div>
   </div>
