@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Radhika Sahani · Product Manager</title>
-<meta name="description" content="Radhika Sahani — a Product Manager who builds consumer products that solve real problems and make things easier, faster, or better. Cornell MBA." />
+<meta name="description" content="Radhika Sahani, a Product Manager building products that solve real problems and make things easier, faster, better. Cornell MBA." />
 <meta property="og:title" content="Radhika Sahani · Product Manager" />
-<meta property="og:description" content="I build products to solve real problems and make things easier, faster, or better." />
+<meta property="og:description" content="I build products to solve real problems and make things easier, faster, better." />
 <meta property="og:image" content="og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -108,6 +108,10 @@ header.nav.scrolled .nav-inner{padding-top:12px;padding-bottom:12px;}
 .case-narrative{padding-top:26px;display:grid;gap:24px;}
 .case-part .case-k{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);margin-bottom:9px;}
 .case-part p{color:var(--muted);font-size:1rem;line-height:1.58;}
+.case-list{list-style:none;display:grid;gap:9px;}
+.case-list li{position:relative;padding-left:20px;color:var(--muted);font-size:1rem;line-height:1.5;}
+.case-list li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--clay);}
+.case-list li b{color:var(--ink);font-weight:600;}
 /* impact box + graphic tiles */
 .case-impact{background:var(--clay-soft);border-radius:16px;padding:22px 22px;margin-top:26px;}
 .case-impact .case-k{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--clay-2);margin-bottom:16px;}
@@ -277,18 +281,24 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
             <div class="case-narrative">
               <div class="case-part">
                 <div class="case-k">Problem</div>
-                <p>When stock markets fall, users wanted to add more money to their existing mutual fund portfolio, but that required them to do so fund by fund, making it a repetitive process each time. We also found that new investors were taking almost 7 days after onboarding to make their first investment.</p>
+                <ul class="case-list">
+                  <li>Adding to an existing mutual fund portfolio meant investing fund by fund, one at a time.</li>
+                  <li>New investors were taking almost 7 days after onboarding to make their first investment.</li>
+                </ul>
               </div>
               <div class="case-part">
                 <div class="case-k">Solution</div>
-                <p>Built a single-click Top-Up feature, so investors could add money across their existing portfolio in a single flow. We also brought relevant fund recommendations into the post-onboarding journey, helping new investors make their first investment sooner and then invest instantly with Top-Up.</p>
+                <ul class="case-list">
+                  <li>Built a single-click Top-Up to invest across the whole portfolio in one flow.</li>
+                  <li>Brought fund recommendations into onboarding so new investors could start sooner.</li>
+                </ul>
               </div>
             </div>
             <div class="case-impact">
               <div class="case-k">The impact</div>
               <div class="impact-grid">
                 <div class="im"><span class="im-badge">↑</span><span class="im-body"><span class="im-num">$1.5M → $70M+</span><span class="im-cap">AUM in 10 months</span></span></div>
-                <div class="im"><span class="im-badge">→</span><span class="im-body"><span class="im-num">7 days → &lt;24 hrs</span><span class="im-cap">Time to first investment</span></span></div>
+                <div class="im"><span class="im-badge">→</span><span class="im-body"><span class="im-num">7 days → 1 day</span><span class="im-cap">Time to first investment</span></span></div>
               </div>
             </div>
           </div>
@@ -307,11 +317,16 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
             <div class="case-narrative">
               <div class="case-part">
                 <div class="case-k">Problem</div>
-                <p>Every quarter, regulation required unused trading balances to be returned to customers' bank accounts. When customers came back to trade, many assumed the money was still available and only found out otherwise when the trade failed. In trading, even a short delay can mean missing the price or the opportunity.</p>
+                <ul class="case-list">
+                  <li>Each quarter, regulation returned unused trading balances to customers' bank accounts.</li>
+                  <li>Customers assumed the money was still there and only found out when a trade failed. In trading, a short delay can mean missing the price.</li>
+                </ul>
               </div>
               <div class="case-part">
                 <div class="case-k">Solution</div>
-                <p>Built Auto Fund Transfer to automatically move the required money from a linked bank account after every quarter, so customers could place their trades without having to add funds manually.</p>
+                <ul class="case-list">
+                  <li>Built Auto Fund Transfer to auto-move funds from a linked bank account each quarter, so trades go through without adding money manually.</li>
+                </ul>
               </div>
             </div>
             <div class="case-impact">
@@ -337,11 +352,15 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
             <div class="case-narrative">
               <div class="case-part">
                 <div class="case-k">Problem</div>
-                <p>Sourcing market news from external vendors was expensive and gave limited control over the content, context, and overall user experience.</p>
+                <ul class="case-list">
+                  <li>Market news came from external vendors: expensive, with limited control over content and context.</li>
+                </ul>
               </div>
               <div class="case-part">
                 <div class="case-k">Solution</div>
-                <p>Built an AI-generated news feed that gave us more control over what users saw and allowed us to add more context around market updates.</p>
+                <ul class="case-list">
+                  <li>Built an AI-generated news feed with more control over what users saw and more context around market updates.</li>
+                </ul>
               </div>
             </div>
             <div class="case-impact">
@@ -367,11 +386,16 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
             <div class="case-narrative">
               <div class="case-part">
                 <div class="case-k">Problem</div>
-                <p>"Where's my money?" was one of the most common questions coming into support. Customers couldn't clearly see when their withdrawal would arrive. At the same time, requests on the backend were being processed one after another, adding unnecessary wait time before the withdrawal process even began.</p>
+                <ul class="case-list">
+                  <li>"Where's my money?" was a top support question; customers couldn't see when a withdrawal would arrive.</li>
+                  <li>Backend requests were processed one after another, adding wait time before processing even began.</li>
+                </ul>
               </div>
               <div class="case-part">
                 <div class="case-k">Solution</div>
-                <p>Redesigned the withdrawal experience to clearly show status and expected timelines. We also changed backend processing so requests could be handled in parallel, reaching the processing stage faster.</p>
+                <ul class="case-list">
+                  <li>Redesigned the withdrawal flow to show clear status and timelines, and moved backend processing to run in parallel.</li>
+                </ul>
               </div>
             </div>
             <div class="case-impact">
@@ -397,17 +421,21 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
             <div class="case-narrative">
               <div class="case-part">
                 <div class="case-k">Problem</div>
-                <p>As the company began integrating acquisitions, the business was changing and the existing brand no longer represented everything we were becoming. We needed to rethink the brand, what it stood for, and the product built around it.</p>
+                <ul class="case-list">
+                  <li>As the company integrated acquisitions, the existing brand no longer reflected what it was becoming.</li>
+                </ul>
               </div>
               <div class="case-part">
                 <div class="case-k">Solution</div>
-                <p>Helped build and launch the ed-tech product from scratch, working across product and product marketing to shape the product, positioning, go-to-market, and early growth.</p>
+                <ul class="case-list">
+                  <li>Helped build and launch the ed-tech product from scratch, across product and product marketing: product, positioning, go-to-market, and early growth.</li>
+                </ul>
               </div>
             </div>
             <div class="case-impact">
               <div class="case-k">The impact</div>
               <div class="impact-grid">
-                <div class="im"><span class="im-badge">↑</span><span class="im-body"><span class="im-num">0 → 200K+</span><span class="im-cap">Customers</span></span></div>
+                <div class="im"><span class="im-badge">↑</span><span class="im-body"><span class="im-num">0 → 200K+</span><span class="im-cap">Paid users in 14 months</span></span></div>
                 <div class="im"><span class="im-badge">★</span><span class="im-body"><span class="im-num">Product + GTM</span><span class="im-cap">From build to launch</span></span></div>
               </div>
             </div>
@@ -447,8 +475,8 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
         <h2 class="section-title" style="margin-bottom:0;">I like turning ambiguity into something we can build.</h2>
       </div>
       <div class="about-body reveal d1">
-        <p>I'm naturally curious and like understanding why things work the way they do. When something isn't clear, I'll ask questions, talk to customers, look at the data, and keep going until I have a better sense of what we should do next. I like taking that uncertainty and turning it into something concrete we can build and ship.</p>
-        <p>Before Cornell, I spent four years at a fintech that grew from an early-stage startup into a billion-dollar company. Working closely with the CEO and leadership team shaped how I think about product as a whole, part of the customer experience, the business, and what the company is trying to build.</p>
+        <p>I'm naturally curious and like understanding why things work the way they do. When something isn't clear, I ask questions, talk to customers, and dig into the data until I have a clear sense of what to build next.</p>
+        <p>Before Cornell, I spent four years at a fintech that grew from an early-stage startup into a billion-dollar company. Working closely with the CEO and leadership team shaped how I think about product as a whole: how it connects to the customer experience, the business, and where the company is headed.</p>
         <p>I like working with people who think the same way: take ownership, challenge each other, and are aligned towards building products that customers use.</p>
       </div>
     </div>
