@@ -155,6 +155,15 @@ header.nav.scrolled .nav-inner{padding-top:12px;padding-bottom:12px;}
 .personal-card p{color:var(--muted);font-size:.98rem;}
 .personal-card p + p{margin-top:12px;}
 .personal-card.tennis p{opacity:.93;}
+/* project card (Things I'm building) */
+.project{display:block;text-decoration:none;color:inherit;transition:transform .35s var(--ease),box-shadow .35s,border-color .25s;}
+.project:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line-strong);}
+.project-media{border-radius:12px;overflow:hidden;border:1px solid var(--line);margin-bottom:18px;background:#fff;}
+.project-media img{width:100%;height:auto;display:block;}
+.project-label{font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
+.project .project-tag{color:var(--ink);font-weight:500;font-size:1.02rem;margin:0 0 10px;}
+.project-cta{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-family:var(--sans);font-weight:600;font-size:.9rem;color:var(--clay);transition:gap .25s var(--ease);}
+.project:hover .project-cta{gap:12px;}
 .tennis-art{width:52px;height:52px;margin-bottom:16px;animation:bounce 2.6s var(--ease) infinite;}
 .tennis-art svg{width:100%;height:100%;display:block;}
 @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-11px);}}
@@ -498,14 +507,16 @@ footer{border-top:1px solid var(--line);padding:38px 0;}
         <p>I grew up playing competitive tennis and represented Gujarat (India) at the state level. I also served as Sports Head for Lawn Tennis.</p>
         <p>I still love playing whenever I get the chance and am always up for a match!</p>
       </div>
-      <div class="personal-card building reveal d1">
-        <div class="building-art" aria-hidden="true">
-          <span class="shape s1"></span><span class="shape s2"></span><span class="shape dash"></span><span class="shape s3"></span>
+      <a class="personal-card project reveal d1" href="cashflow.html" aria-label="CashFlow case study">
+        <div class="project-media">
+          <img src="assets/cashflow-ask.jpg" alt="CashFlow answering a question about spending, grounded in the underlying numbers" loading="lazy" />
         </div>
-        <h3>Things I'm building</h3>
-        <p>A few side projects in the works, I'll share them here as they come to life.</p>
-        <span class="soon-badge"><span class="soon-dot"></span> Coming soon</span>
-      </div>
+        <div class="project-label">Side project · 2026</div>
+        <h3>CashFlow</h3>
+        <p class="project-tag">Making connected financial data easier to understand.</p>
+        <p>I wanted to explore what happens after financial data is connected and categorized. CashFlow combines transaction data, enrichment and a grounded AI layer so users can ask what changed in their spending and understand what actually drove it.</p>
+        <span class="project-cta">View case study →</span>
+      </a>
     </div>
   </div>
 </section>
